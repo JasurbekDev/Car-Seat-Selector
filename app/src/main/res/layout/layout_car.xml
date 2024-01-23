@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/car_body_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_marginTop="36dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_car_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="177dp"
+        android:layout_marginEnd="7dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_driver"
+        app:layout_constraintEnd_toEndOf="@id/car_center_guideline"
+        app:layout_constraintTop_toTopOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_top_right"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="172dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_top_right"
+        android:tag="seat_1"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline"
+        app:layout_constraintTop_toTopOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_top_right_red"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="172dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_top_right_red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline"
+        app:layout_constraintTop_toTopOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_top_right_green"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="172dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_top_right_green"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline"
+        app:layout_constraintTop_toTopOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_middle"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="93dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_middle"
+        android:tag="seat_3"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toEndOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_middle_red"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="93dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_middle_red"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toEndOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_middle_green"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="93dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_middle_green"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toEndOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_body_iv" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_left"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge"
+        android:tag="seat_2"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_left_red"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge_red"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_left_green"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge_green"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintEnd_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_right"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge"
+        android:tag="seat_4"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_right_red"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge_red"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:id="@+id/seat_bottom_right_green"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="94dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_seat_bottom_edge_green"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/car_body_iv"
+        app:layout_constraintStart_toStartOf="@id/car_center_guideline" />
+
+    <ImageView
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_windshield"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/car_body_iv" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/car_center_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
