@@ -14,8 +14,16 @@ class MainActivity : AppCompatActivity(), CarSeatSelectorView.CarSeatSelectorLis
         setContentView(binding.root)
 
         binding.viewCarSeatSelector.setCarSeatSelectorListener(this)
+//        binding.viewCarSeatSelector.setUnavailable(listOf(2, 4))
 
-        binding.viewCarSeatSelector.setUnavailable(listOf(2))
+        binding.viewCarSeatSelector.viewTreeObserver.addOnGlobalLayoutListener {
+            binding.btnMultiState.text = binding.viewCarSeatSelector.isMultiSelect.toString()
+        }
+
+        binding.btnMultiState.setOnClickListener {
+            binding.viewCarSeatSelector.setIsMultiSelect(!binding.viewCarSeatSelector.isMultiSelect)
+            binding.btnMultiState.text = binding.viewCarSeatSelector.isMultiSelect.toString()
+        }
     }
 
     override fun onSeatClick(selectedSeatPositions: List<Int>) {

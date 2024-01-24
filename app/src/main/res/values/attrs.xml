@@ -3,4 +3,8 @@
     <declare-styleable name="MyCustomView">
         <attr name="myTextColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="CarSeatSelectorView">
+        <attr name="multiSelect" format="boolean" />
+    </declare-styleable>
 </resources>
