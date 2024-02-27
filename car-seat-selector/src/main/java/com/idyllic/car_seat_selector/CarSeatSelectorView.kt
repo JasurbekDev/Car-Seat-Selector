@@ -5,14 +5,12 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.view.isVisible
-import com.idyllic.car_seat_selector.databinding.LayoutCarBinding
 
 private const val SUPER_STATE = "SUPER_STATE"
 private const val SELECTED_SEAT_TAGS = "SELECTED_SEAT_TAGS"
@@ -29,6 +27,22 @@ class CarSeatSelectorView : FrameLayout {
     private var listener: CarSeatSelectorListener? = null
     private var _isMultiSelect = false
     val isMultiSelect get() = _isMultiSelect
+
+    private lateinit var seatTopRight: ImageView
+    private lateinit var seatTopRightRed: ImageView
+    private lateinit var seatTopRightGreen: ImageView
+
+    private lateinit var seatBottomLeft: ImageView
+    private lateinit var seatBottomLeftRed: ImageView
+    private lateinit var seatBottomLeftGreen: ImageView
+
+    private lateinit var seatBottomMiddle: ImageView
+    private lateinit var seatBottomMiddleRed: ImageView
+    private lateinit var seatBottomMiddleGreen: ImageView
+
+    private lateinit var seatBottomRight: ImageView
+    private lateinit var seatBottomRightRed: ImageView
+    private lateinit var seatBottomRightGreen: ImageView
 
     constructor(context: Context) : super(context) {
         init(null)
@@ -47,29 +61,41 @@ class CarSeatSelectorView : FrameLayout {
     }
 
     private fun init(attrs: AttributeSet?) {
-        val binding = LayoutCarBinding.inflate(
-            LayoutInflater.from(context)
-        )
-        addView(binding.root)
+
+        val layout = inflate(context, R.layout.layout_car, this)
+
+        seatTopRight = layout.findViewById(R.id.seat_top_right)
+        seatTopRightRed = layout.findViewById(R.id.seat_top_right_red)
+        seatTopRightGreen = layout.findViewById(R.id.seat_top_right_green)
+
+        seatBottomLeft = layout.findViewById(R.id.seat_bottom_left)
+        seatBottomLeftRed = layout.findViewById(R.id.seat_bottom_left_red)
+        seatBottomLeftGreen = layout.findViewById(R.id.seat_bottom_left_green)
+
+        seatBottomMiddle = layout.findViewById(R.id.seat_bottom_middle)
+        seatBottomMiddleRed = layout.findViewById(R.id.seat_bottom_middle_red)
+        seatBottomMiddleGreen = layout.findViewById(R.id.seat_bottom_middle_green)
+
+        seatBottomRight = layout.findViewById(R.id.seat_bottom_right)
+        seatBottomRightRed = layout.findViewById(R.id.seat_bottom_right_red)
+        seatBottomRightGreen = layout.findViewById(R.id.seat_bottom_right_green)
 
         animFadeOut =
             AnimationUtils.loadAnimation(context, R.anim.fade_out)
         animFadeIn =
             AnimationUtils.loadAnimation(context, R.anim.fade_in)
 
-        binding.apply {
-            seatViewMap[seatTopRight] = Pair(seatTopRightRed, seatTopRightGreen)
-            seatViewMap[seatBottomLeft] = Pair(seatBottomLeftRed, seatBottomLeftGreen)
-            seatViewMap[seatBottomMiddle] = Pair(seatBottomMiddleRed, seatBottomMiddleGreen)
-            seatViewMap[seatBottomRight] = Pair(seatBottomRightRed, seatBottomRightGreen)
+        seatViewMap[seatTopRight] = Pair(seatTopRightRed, seatTopRightGreen)
+        seatViewMap[seatBottomLeft] = Pair(seatBottomLeftRed, seatBottomLeftGreen)
+        seatViewMap[seatBottomMiddle] = Pair(seatBottomMiddleRed, seatBottomMiddleGreen)
+        seatViewMap[seatBottomRight] = Pair(seatBottomRightRed, seatBottomRightGreen)
 
-            seatViewMap.forEach { entry ->
-                entry.key.setOnClickListener {
-                    onSeatClick(it)
-                }
-                entry.value.second.setOnClickListener {
-                    onSeatClick(it)
-                }
+        seatViewMap.forEach { entry ->
+            entry.key.setOnClickListener {
+                onSeatClick(it)
+            }
+            entry.value.second.setOnClickListener {
+                onSeatClick(it)
             }
         }
 
