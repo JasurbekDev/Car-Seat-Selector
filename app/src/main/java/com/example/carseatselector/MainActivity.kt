@@ -1,8 +1,9 @@
 package com.example.carseatselector
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.carseatselector.databinding.ActivityMainBinding
+import com.idyllic.car_seat_selector.CarSeatSelectorView
 
 class MainActivity : AppCompatActivity(), CarSeatSelectorView.CarSeatSelectorListener {
 

@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Car Seat Selector"
 include(":app")
- 
+include(":car-seat-selector")

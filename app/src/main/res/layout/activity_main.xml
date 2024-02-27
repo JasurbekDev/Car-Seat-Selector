@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.example.carseatselector.CarSeatSelectorView
+    <com.idyllic.car_seat_selector.CarSeatSelectorView
         android:id="@+id/view_car_seat_selector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
